@@ -1,4 +1,4 @@
-it-messaging
+IT: Messaging
 ============
 
 Internet Technology: XMPP Coursework
