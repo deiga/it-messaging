@@ -1,5 +1,4 @@
 require 'xmpp4r'
-require 'xmpp4r/muc'
 include Jabber
 
 class ItMessaging < Sinatra::Base
@@ -17,14 +16,7 @@ class ItMessaging < Sinatra::Base
     # client.auth_anonymous
     client.send(Presence.new.set_type(:available))
 
-    muc = MUC::SimpleMUCClient.new(client)
-    muc.on_message do |time,nick,text|
-      puts (time || Time.new).strftime('%I:%M') + " <#{nick}> #{text}"
-    end
-    muc.join(JID::new('itm@conference.guinevere.local/ITM-Bot'))
-    muc.say('Foo')
     client.close
-    "Successfull"
   end
 
 end
