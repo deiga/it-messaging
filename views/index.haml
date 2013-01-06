@@ -1,1 +1,7 @@
 %h1 Hello World!
+/ - unless @messages_times.empty?
+%ul
+  - @messages_times.each do |m_t|
+    - m = m_t[:message]
+    - t = m_t[:time]
+    %li= "#{m.from}> #{m.body} #{t}"
