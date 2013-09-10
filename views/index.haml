@@ -1,10 +1,12 @@
-%h1 Hello World!
+%h1>
+  Internet Technology: XMPP Messaging
+  %small= "(self: #{settings.jid})"
 - unless @messages_times.empty?
   %ul
     - @messages_times.each do |m_t|
       - m = m_t[:message]
       - t = m_t[:time]
-      %li= "#{m.from}> #{m.body} #{t}"
+      %li= "(#{t}) #{m.from}> #{m.body}"
 %form{method: :post, action: 'send'}
   %label{:for => "nick"}
     Nick:

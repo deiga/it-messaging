@@ -10,8 +10,8 @@ class ItMessaging < Sinatra::Base
   end
 
   configure do
-    @@jid = JID::new("test","guinevere.local","itm")
-    @@xmpp = Client.new(@@jid)
+    set :jid, JID::new("test","guinevere.local","itm")
+    @@xmpp = Client.new(settings.jid)
     @@xmpp.connect
     @@xmpp.auth("tester")
 
